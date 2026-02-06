@@ -17,13 +17,13 @@ app.use("/api/auth", authRoutes); // Using the imported authentication routes fo
 app.use("/api/messages", messageRoutes);
 
 // make deployment ready
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../../frontend/dist"))); // Serving static files from the "dist" directory of the frontend build when in production mode
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "../../frontend/dist"))); // Serving static files from the "dist" directory of the frontend build when in production mode
 
-  app.get("*", (_, res) => {
-    res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
-  });
-}
+//   app.get("*", (_, res) => {
+//     res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+//   });
+// }
 
 app.listen(PORT, () => {
   // Starting the server and listening on port 3000 for incoming requests.
