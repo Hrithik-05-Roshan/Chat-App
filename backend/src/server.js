@@ -18,10 +18,10 @@ app.use("/api/messages", messageRoutes);
 
 // make deployment ready
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist"))); // Serving static files from the "dist" directory of the frontend build when in production mode
+  app.use(express.static(path.join(__dirname, "../../frontend/dist"))); // Serving static files from the "dist" directory of the frontend build when in production mode
 
   app.get("*", (_, res) => {
-    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+    res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
   });
 }
 
